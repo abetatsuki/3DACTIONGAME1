@@ -99,3 +99,5 @@ InitTestScene*.unity*
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 Assets/TextMesh Pro/
+Assets/Igonore/Z_Assets/BTM_Assets/BTM_Items_Gems/Models/CubieB.fbx.meta
+Assets/
