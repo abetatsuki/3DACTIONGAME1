@@ -1,11 +1,13 @@
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.UI;
 
 public class SlectSystem : MonoBehaviour
 {
  
     [SerializeField,StringLengthLimit(10)] private string[] _strings;
+    [SerializeField] private ItemDataBase _itemDatas;
     [SerializeField] private float _fontSize = 36f;
     [SerializeField] private float _lineSpacing = 80f;
     [SerializeField] private RectTransform _viewArea; // ← Mask付きの表示範囲
@@ -69,9 +71,15 @@ public class SlectSystem : MonoBehaviour
         for (int i = 0; i < _textList.Length; i++)
         {
             _textList[i].color = (i == _currentIndex) ? _selectedColor : _normalColor;
+            
         }
     }
 
+    public void BuyItem(int index)
+    {
+        GameObject obj = _itemDatas.ItemDatas[index];
+        Instantiate(obj,transform.position,Quaternion.identity);
+    }
     private void ScrollToCurrent()
     {
         if (_viewArea == null) return;
